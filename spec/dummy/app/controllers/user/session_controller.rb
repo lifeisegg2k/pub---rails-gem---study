@@ -8,6 +8,7 @@ class User::SessionController < ApplicationController
   end
 
   def create
+    binding.pry
     user = MyApp::User.find_by(user_params)
     if user.present?
       session[:user_id] = user.id
